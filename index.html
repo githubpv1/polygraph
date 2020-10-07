@@ -122,76 +122,116 @@
 			<path d="M30.956 3.481h-2.438v-2.438c0-0.575-0.469-1.044-1.044-1.044h-4.175c-0.575 0-1.044 0.469-1.044 1.044v2.438h-2.438c-0.575 0-1.044 0.469-1.044 1.044v4.175c0 0.575 0.469 1.044 1.044 1.044h2.438v2.438c0 0.575 0.469 1.044 1.044 1.044h4.175c0.575 0 1.044-0.469 1.044-1.044v-2.438h2.438c0.575 0 1.044-0.469 1.044-1.044v-4.181c0-0.575-0.469-1.038-1.044-1.038zM30.663 8.4h-3.188c-0.163 0-0.294 0.131-0.294 0.294v3.188h-3.587v-3.188c0-0.162-0.131-0.294-0.294-0.294h-3.188v-3.588h3.188c0.163 0 0.294-0.131 0.294-0.294v-3.188h3.594v3.188c0 0.162 0.131 0.294 0.294 0.294h3.188l-0.006 3.588z"></path>
 			<path d="M21.913 17.394h-10.438c-0.575 0-1.044 0.469-1.044 1.044v4.175c0 0.575 0.469 1.044 1.044 1.044h4.15c-0.969 1.288-2.494 2.087-4.144 2.087-2.875 0-5.219-2.344-5.219-5.219s2.344-5.219 5.219-5.219c1.394 0 2.7 0.544 3.688 1.531 0.406 0.406 1.069 0.406 1.475 0l2.95-2.95c0.194-0.194 0.306-0.463 0.306-0.738s-0.113-0.544-0.306-0.738c-2.169-2.169-5.050-3.363-8.113-3.363-6.331-0.006-11.481 5.144-11.481 11.469 0 6.331 5.15 11.481 11.481 11.481s11.475-5.15 11.475-11.481v-2.081c0-0.581-0.469-1.044-1.044-1.044zM21.556 20.519c0 5.556-4.525 10.081-10.081 10.081s-10.075-4.525-10.075-10.081 4.525-10.075 10.081-10.075c2.313 0 4.488 0.762 6.287 2.206l0.594 0.481-2.45 2.45-0.481-0.356c-1.15-0.863-2.519-1.319-3.963-1.319-3.65 0-6.619 2.969-6.619 6.619s2.969 6.619 6.619 6.619c2.775 0 5.269-1.769 6.213-4.406 0.038-0.106 0.019-0.231-0.044-0.325-0.069-0.094-0.181-0.156-0.294-0.156h-5.519v-3.462h9.725v1.35h0.006v0.375z"></path>
 		</symbol>
+		<symbol id="icon-close" viewBox="0 0 32 32">
+			<title>close</title>
+			<path
+				d="M18.329 16.022l13.152-13.080c0.631-0.624 0.631-1.635 0-2.257-0.629-0.624-1.65-0.624-2.279 0l-13.14 13.069-13.262-13.263c-0.629-0.631-1.65-0.631-2.279 0-0.629 0.632-0.629 1.655 0 2.286l13.252 13.254-13.3 13.227c-0.629 0.624-0.629 1.635 0 2.257 0.629 0.624 1.65 0.624 2.279 0l13.289-13.215 13.209 13.211c0.629 0.631 1.65 0.631 2.279 0 0.629-0.632 0.629-1.655 0-2.286l-13.199-13.201z">
+			</path>
+		</symbol>
 	</svg>
 
 
 	<header class="head">
+		<div class="container form__container">
+			<form id="form_2" action="#" method="post" >
+				<input type="text" class="head__search" name="search" placeholder="Поиск..." />
+			</form>
+		</div>
 		<div class="head__top">
 
-			<div class="container">
+			<div class="container ">
 				<div class="head__row_top">
-					<nav class="head__nav">
-						<ul>
-							<li class="active"><a href="video.html">Фото и видео</a></li>
-							<li><a href="tipe.html">Лента</a></li>
-							<li><a href="art.html">ART</a></li>
-							<li><a href="list.html">Досье</a></li>
-						</ul>
-					</nav>
-
-					<nav class="socials ">
-						<ul>
-							<li>
-								<a aria-label="facebook" target="_blank" rel="noopener noreferrer" href="https://facebook.com/">
-									<svg class="icon">
-										<use xlink:href="#icon-facebook"></use>
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a aria-label="twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/">
-									<svg class="icon">
-										<use xlink:href="#icon-twitter"></use>
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a aria-label="rss" target="_blank" rel="noopener noreferrer" href="#">
-									<svg class="icon">
-										<use xlink:href="#icon-rss"></use>
-									</svg>
-								</a>
-							</li>
-						</ul>
-					</nav>
-
-					<button  class="link_avatar" onclick="openDialog('dialog-sign_in', this)"> 
-						<svg class="avatar__icon icon" aria-hidden="true">
-							<use xlink:href="#icon-avatar"></use>
-						</svg> Вход</button>
-
-					<form id="form_1" action="#" method="post" enctype="multipart/form-data">
-						<input type="text" class="search" name="search" placeholder="Введите запрос" />
-					</form>
-					<button class="btn_search" aria-label="search">
-						<svg class="icon_search icon">
-							<use xlink:href="#icon-search"></use>
-						</svg>
-					</button>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="head__center">
-			<div class="container">
-				<div class="head__row">
 
 					<button class="nav__burger">
 						<span></span>
 						<span></span>
 						<span></span>
 					</button>
+
+					<div class="head__nav_top">
+
+						<nav class="socials ">
+							<ul>
+								<li>
+									<a aria-label="facebook" target="_blank" rel="noopener noreferrer" href="https://facebook.com/">
+										<svg class="icon">
+											<use xlink:href="#icon-facebook"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a aria-label="twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/">
+										<svg class="icon">
+											<use xlink:href="#icon-twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a aria-label="rss" target="_blank" rel="noopener noreferrer" href="#">
+										<svg class="icon">
+											<use xlink:href="#icon-rss"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</nav>
+
+						<button class="link_avatar" onclick="openDialog('dialog-sign_in', this)">
+							<svg class="avatar__icon icon" aria-hidden="true">
+								<use xlink:href="#icon-avatar"></use>
+							</svg> Вход</button>
+
+						<nav class="head__nav">
+							<ul>
+								<li class="active"><a href="video.html">Фото и видео</a></li>
+								<li><a href="tipe.html">Лента</a></li>
+								<div class="head__bottom">
+									<div class="container">
+										<nav class="head__nav_bottom ">
+											<ul>
+												<li><a href="#">СБУ</a></li>
+												<li><a href="#">Полиция-МВД</a></li>
+												<li><a href="#">Депутаты</a></li>
+												<li><a href="#">Министры</a></li>
+												<li><a href="#">Чиновники</a></li>
+												<li><a href="#">Судьи</a></li>
+												<li><a href="#">Прокуроры</a></li>
+												<li><a href="#">Олигархи</a></li>
+												<li><a href="#">Налоговая и Таможняж</a></li>
+												<li><a href="#">Бизнесмены</a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<li><a href="art.html">ART</a></li>
+								<li><a href="list.html">Досье</a></li>
+							</ul>
+						</nav>
+
+						<div class="mobile__mail footer__mail"> Эл. адрес редакции - <a href="mailto:info@polygraf.net">info@polygraf.net</a></div>
+
+					</div>
+					<div class="overlay"></div>
+
+					
+					<button class="btn_search" aria-label="search">
+						<svg class="icon_search icon">
+							<use xlink:href="#icon-search"></use>
+						</svg>
+						<svg class="icon_close icon">
+							<use xlink:href="#icon-close"></use>
+						</svg>
+					</button>
+				</div>
+
+				
+			</div>
+		</div>
+
+
+		<div class="head__center">
+			<div class="container">
+				<div class="head__row_center">
 
 					<div class="logo">
 						<img class="logo__img" src="img/logo.png" alt="логотип">
@@ -206,25 +246,6 @@
 			</div>
 		</div>
 
-
-		<div class="head__bottom">
-			<div class="container">
-				<nav class="head__nav_bottom ">
-					<ul>
-						<li><a href="#">СБУ</a></li>
-						<li><a href="#">Полиция-МВД</a></li>
-						<li><a href="#">Депутаты</a></li>
-						<li><a href="#">Министры</a></li>
-						<li><a href="#">Чиновники</a></li>
-						<li><a href="#">Судьи</a></li>
-						<li><a href="#">Прокуроры</a></li>
-						<li><a href="#">Олигархи</a></li>
-						<li><a href="#">Налоговая и Таможняж</a></li>
-						<li><a href="#">Бизнесмены</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
 	</header>
 
 
@@ -748,20 +769,133 @@
 	</footer>
 
 
-<!-- modal --> 
+<!-- modal sign_in --> 
 
 <div role="dialog" id="dialog-sign_in" aria-labelledby="dialog_label" aria-modal="true" class="hidden">
   <div class="modal__content">
 
     <div class="modal_close">
       <button onclick="closeDialog(this)" class="modal__btn_close" aria-label="Close">
-        <!-- <span aria-hidden="true">&times;</span> -->
         <svg class="icon modal__icon_cancel">
           <use xlink:href="#icon-close"></use>
         </svg>
       </button>
-    </div>
+		</div>
+		
+		<h2 class="flex title_blue">Вход <button class="link_archive" onclick="replaceDialog('dialog-reg')" > Регистрация</button></h2>
+
+		<div class="modal__title mb_15">Войдите через социальные сети:</div>
+
+		<nav class="modal__socials ">
+			<ul>
+				<li>
+					<a aria-label="facebook" href="#!">
+						<svg class="icon">
+							<use xlink:href="#icon-facebook"></use>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a aria-label="twitter" href="#!">
+						<svg class="icon">
+							<use xlink:href="#icon-twitter"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="modal__title mb_30">Или авторизируйтесь:</div>
+
+		<form id="form_3" action="#" method="post" novalidate>
+
+			<div class="fieldset">
+				<label class="label" for="name">Логин</label>
+				<input type="text" class="name" name="name" id="name" required />
+			</div>
+
+			<div class="fieldset">
+				<label class="label" for="password">Пароль</label>
+				<input class="password" type="password" name="password" id="password" required>
+			</div>
+
+			<div class="wrap__checkbox wrap__checkbox_flex">
+				<input id="check" type="checkbox" class="checkbox" name="checkbox" value="" checked>
+				<label class="label_check" for="check">Запомнить</label>
+
+				<a href="#!" class="link_form">Забыли пароль?</a>
+			</div>
+
+			<button class="btn_login" type="submit" value="">Войти</button>
+		</form>
     
+
+  </div>  
+</div>
+
+
+
+<!-- modal register --> 
+
+<div role="dialog" id="dialog-reg" aria-labelledby="dialog_label" aria-modal="true" class="hidden">
+  <div class="modal__content">
+
+    <div class="modal_close">
+      <button onclick="closeDialog(this)" class="modal__btn_close" aria-label="Close">
+        <svg class="icon modal__icon_cancel">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+      </button>
+		</div>
+		
+		<h2 class="flex title_blue"> Регистрация<button href="#!" class="link_archive" onclick="replaceDialog('dialog-sign_in')">Вход</button></h2>
+	
+
+		<form id="form_4" action="#" method="post" novalidate>
+
+			<div class="fieldset">
+				<label class="label" for="name">Логин*</label>
+				<input type="text" class="name" name="name" id="name" required />
+			</div>
+
+			<div class="fieldset">
+				<label class="label" for="password">Пароль*</label>
+				<input class="password" type="password" name="password" id="password" required>
+			</div>
+			<div class="fieldset">
+				<label class="label" for="password">Повторите пароль*</label>
+				<input class="password" type="password" name="password" id="password" required>
+			</div>
+			<div class="fieldset">
+				<label class="label" for="password">Ф.И.О</label>
+				<input class="password" type="password" name="password" id="password" required>
+			</div>
+			<div class="fieldset">
+				<label class="label" for="password">Эл. почта*</label>
+				<input class="password" type="password" name="password" id="password" required>
+			</div>
+			<div class="fieldset">
+				<label class="label" for="password">Телефон</label>
+				<input class="password" type="password" name="password" id="password" required>
+			</div>
+
+			<div class="wrap__reCaptcha">
+				<div class="reCaptcha"></div>
+				<a href="#!" class="link_form">Другие символы</a>
+			</div>
+
+			<div class="fieldset">
+				<label class="label" for="password">Введите символы с картинки</label>
+				<input class="password" type="password" name="password" id="password" required>
+			</div>
+
+			<div class="wrap__checkbox ">
+				<input id="check1" type="checkbox" class="checkbox" name="checkbox" value="" checked>
+				<label class="label_check" for="check1"> Я принимаю условия <a href="#!" class="link_form"> договора пользования сайтом</a> </label>
+			</div>
+
+			<button class="btn_login" type="submit" value="">Войти</button>
+		</form>
 
   </div>  
 </div>
@@ -772,7 +906,7 @@
 	<script src="js/ofi.min.js"></script>
 	<script src="js/swiper.min.js"></script>
 	<script src="js/accordion.js"></script>
-	<script src="js/utilsjs"></script>
+	<script src="js/utils.js"></script>
 	<script src="js/dialog.js"></script>
 
 	<script src="js/main.js"></script>

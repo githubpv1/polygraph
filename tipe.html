@@ -118,69 +118,116 @@
 				d="M9.982 13.725c-1.263 0-2.286 1.024-2.286 2.286s1.024 2.286 2.286 2.286c1.262 0 2.286-1.023 2.286-2.286s-1.024-2.286-2.286-2.286zM9.982 16.895c-0.488 0-0.884-0.396-0.884-0.884s0.396-0.883 0.884-0.883c0.488 0 0.883 0.396 0.883 0.883s-0.396 0.883-0.883 0.884z">
 			</path>
 		</symbol>
+		<symbol id="icon-close" viewBox="0 0 32 32">
+			<title>close</title>
+			<path
+				d="M18.329 16.022l13.152-13.080c0.631-0.624 0.631-1.635 0-2.257-0.629-0.624-1.65-0.624-2.279 0l-13.14 13.069-13.262-13.263c-0.629-0.631-1.65-0.631-2.279 0-0.629 0.632-0.629 1.655 0 2.286l13.252 13.254-13.3 13.227c-0.629 0.624-0.629 1.635 0 2.257 0.629 0.624 1.65 0.624 2.279 0l13.289-13.215 13.209 13.211c0.629 0.631 1.65 0.631 2.279 0 0.629-0.632 0.629-1.655 0-2.286l-13.199-13.201z">
+			</path>
+		</symbol>
 	</svg>
 
 
 	<header class="head">
+		<div class="container form__container">
+			<form id="form_2" action="#" method="post" >
+				<input type="text" class="head__search" name="search" placeholder="Поиск..." />
+			</form>
+		</div>
 		<div class="head__top">
 
-			<div class="container">
+			<div class="container ">
 				<div class="head__row_top">
-					<nav class="head__nav">
-						<ul>
-							<li class="active"><a href="#">Фото и видео</a></li>
-							<li><a href="#">Лента</a></li>
-							<li><a href="#">ART</a></li>
-							<li><a href="#">Досье</a></li>
-						</ul>
-					</nav>
 
-					<nav class="socials ">
-						<ul>
-							<li>
-								<a aria-label="facebook" target="_blank" rel="noopener noreferrer" href="https://facebook.com/">
-									<svg class="icon">
-										<use xlink:href="#icon-facebook"></use>
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a aria-label="twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/">
-									<svg class="icon">
-										<use xlink:href="#icon-twitter"></use>
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a aria-label="rss" target="_blank" rel="noopener noreferrer" href="#">
-									<svg class="icon">
-										<use xlink:href="#icon-rss"></use>
-									</svg>
-								</a>
-							</li>
-						</ul>
-					</nav>
+					<button class="nav__burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
 
-					<a href="#!" class="link_avatar"> <svg class="avatar__icon icon" aria-hidden="true">
-							<use xlink:href="#icon-avatar"></use>
-						</svg> Вход</a>
+					<div class="head__nav_top">
 
-					<form id="form_1" action="#" method="post" enctype="multipart/form-data">
-						<input type="text" class="search" name="search" placeholder="Введите запрос" />
-					</form>
-					<button class="btn_search" aria-label="close">
+						<nav class="socials ">
+							<ul>
+								<li>
+									<a aria-label="facebook" target="_blank" rel="noopener noreferrer" href="https://facebook.com/">
+										<svg class="icon">
+											<use xlink:href="#icon-facebook"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a aria-label="twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/">
+										<svg class="icon">
+											<use xlink:href="#icon-twitter"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a aria-label="rss" target="_blank" rel="noopener noreferrer" href="#">
+										<svg class="icon">
+											<use xlink:href="#icon-rss"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</nav>
+
+						<button class="link_avatar" onclick="openDialog('dialog-sign_in', this)">
+							<svg class="avatar__icon icon" aria-hidden="true">
+								<use xlink:href="#icon-avatar"></use>
+							</svg> Вход</button>
+
+						<nav class="head__nav">
+							<ul>
+								<li class="active"><a href="video.html">Фото и видео</a></li>
+								<li><a href="tipe.html">Лента</a></li>
+								<div class="head__bottom">
+									<div class="container">
+										<nav class="head__nav_bottom ">
+											<ul>
+												<li><a href="#">СБУ</a></li>
+												<li><a href="#">Полиция-МВД</a></li>
+												<li><a href="#">Депутаты</a></li>
+												<li><a href="#">Министры</a></li>
+												<li><a href="#">Чиновники</a></li>
+												<li><a href="#">Судьи</a></li>
+												<li><a href="#">Прокуроры</a></li>
+												<li><a href="#">Олигархи</a></li>
+												<li><a href="#">Налоговая и Таможняж</a></li>
+												<li><a href="#">Бизнесмены</a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<li><a href="art.html">ART</a></li>
+								<li><a href="list.html">Досье</a></li>
+							</ul>
+						</nav>
+
+						<div class="mobile__mail footer__mail"> Эл. адрес редакции - <a href="mailto:info@polygraf.net">info@polygraf.net</a></div>
+
+					</div>
+					<div class="overlay"></div>
+
+					
+					<button class="btn_search" aria-label="search">
 						<svg class="icon_search icon">
 							<use xlink:href="#icon-search"></use>
 						</svg>
+						<svg class="icon_close icon">
+							<use xlink:href="#icon-close"></use>
+						</svg>
 					</button>
 				</div>
+
+				
 			</div>
 		</div>
 
 
 		<div class="head__center">
 			<div class="container">
-				<div class="head__row">
+				<div class="head__row_center">
 
 					<div class="logo">
 						<img class="logo__img" src="img/logo.png" alt="логотип">
@@ -188,32 +235,13 @@
 						<a class="logo__link" href="/" title="на главную"></a>
 					</div>
 
-					<a href="mailto:info@polygraf.net">
-						<img class="link" src="img/banner.jpg" alt="">
+					<a class="link__banner" href="mailto:info@polygraf.net">
+						<img src="img/banner.jpg" alt="">
 					</a>
 				</div>
 			</div>
 		</div>
 
-
-		<div class="head__bottom">
-			<div class="container">
-				<nav class="head__nav_bottom ">
-					<ul>
-						<li><a href="#">СБУ</a></li>
-						<li><a href="#">Полиция-МВД</a></li>
-						<li><a href="#">Депутаты</a></li>
-						<li><a href="#">Министры</a></li>
-						<li><a href="#">Чиновники</a></li>
-						<li><a href="#">Судьи</a></li>
-						<li><a href="#">Прокуроры</a></li>
-						<li><a href="#">Олигархи</a></li>
-						<li><a href="#">Налоговая и Таможняж</a></li>
-						<li><a href="#">Бизнесмены</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
 	</header>
 
 
@@ -225,41 +253,44 @@
 
 
 			<div class="row">
-				<div class="left__col col-md-8">
+				<div class="left__col col-lg-8">
 
 					<h2 class="flex title_blue">ЛЕНТА <a href="#!" class="link_archive">АРХИВ ЛЕНТЫ</a></h2>
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img4.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
+						<div class="tipe__desc">
 							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
 								пиар-месседжи»
 								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
-								собственную безопасность ...;</div>
+								собственную безопасностьИнформация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
+								собственную безопасность ...</div>
 						</div>
 					</a>
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img5.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
-							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически</h2>
+						<div class="tipe__desc">
+							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
+								пиар-месседжи»
+								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
 								собственную безопасность ...</div>
 						</div>
@@ -267,196 +298,207 @@
 
 					<img class="link mb_30" src="img/gif.jpg" alt="">
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img6.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
+						<div class="tipe__desc">
 							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
-								пиар-месседжи» — экс-нардеп</h2>
+								пиар-месседжи»
+								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
 								собственную безопасность ...</div>
 						</div>
 					</a>
 
-					<div class="row">
-						<div class="col-6 m_30">
+					<div class="row mb_30">
+						<div class="col-sm-6 news2__col">
 							<a class="news_2" href="#!">
-								<div class="news1__wrap_img mb_15">
+								<div class="wrap_img mb_15">
 									<img class="img_cover" src="img/img7.jpg" alt="">
 								</div>
-								<div class="news1__desc">
-									<div class="news__date">
+								<div class="news2__desc">
+									<div class="news2__date">
 										<svg class="news__icon icon" aria-hidden="true">
 											<use xlink:href="#icon-time"></use>
 										</svg>05 декабря 2018, 12:45</div>
-									<h2 class="title_2">Как Ложкин на ПриватБанке заработал</h2>
+									<h2 class="news2__title title_2">Как Ложкин на ПриватБанке заработал</h2>
 								</div>
 							</a>
 						</div>
 
-						<div class="col-6 m_30">
+						<div class="col-sm-6 news2__col">
 							<a class="news_2" href="#!">
-								<div class="news1__wrap_img mb_15">
+								<div class="wrap_img mb_15">
 									<img class="img_cover" src="img/img8.jpg" alt="">
 								</div>
-								<div class="news1__desc">
-									<div class="news__date">
+								<div class="news2__desc">
+									<div class="news2__date">
 										<svg class="news__icon icon" aria-hidden="true">
 											<use xlink:href="#icon-time"></use>
 										</svg>05 декабря 2018, 12:45</div>
-									<h2 class="title_2">У мережі показали нерухомість сім’ї прокурора САП, куплену на невідомі кошти</h2>
+									<h2 class="news2__title title_2">Как Ложкин на ПриватБанке заработал</h2>
 								</div>
 							</a>
 						</div>
 					</div>
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img4.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
+						<div class="tipe__desc">
 							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
 								пиар-месседжи»
 								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
-								собственную безопасность ...;</div>
+								собственную безопасностьИнформация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
+								собственную безопасность ...</div>
 						</div>
 					</a>
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img5.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
-							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически</h2>
+						<div class="tipe__desc">
+							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
+								пиар-месседжи»
+								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
 								собственную безопасность ...</div>
 						</div>
 					</a>
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img6.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
+						<div class="tipe__desc">
 							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
-								пиар-месседжи» — экс-нардеп</h2>
+								пиар-месседжи»
+								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
 								собственную безопасность ...</div>
 						</div>
 					</a>
 
 
-					<div class="row ">
-						<div class="col-6 m_30">
+					<div class="row mb_30">
+						<div class="col-sm-6 news2__col">
 							<a class="news_2" href="#!">
-								<div class="news1__wrap_img mb_15">
+								<div class="wrap_img mb_15">
 									<img class="img_cover" src="img/img7.jpg" alt="">
 								</div>
-								<div class="news1__desc">
-									<div class="news__date">
+								<div class="news2__desc">
+									<div class="news2__date">
 										<svg class="news__icon icon" aria-hidden="true">
 											<use xlink:href="#icon-time"></use>
 										</svg>05 декабря 2018, 12:45</div>
-									<h2 class="title_2">Как Ложкин на ПриватБанке заработал</h2>
+									<h2 class="news2__title title_2">Как Ложкин на ПриватБанке заработал</h2>
 								</div>
 							</a>
 						</div>
 
-						<div class="col-6 m_30">
+						<div class="col-sm-6 news2__col">
 							<a class="news_2" href="#!">
-								<div class="news1__wrap_img mb_15">
+								<div class="wrap_img mb_15">
 									<img class="img_cover" src="img/img8.jpg" alt="">
 								</div>
-								<div class="news1__desc">
-									<div class="news__date">
+								<div class="news2__desc">
+									<div class="news2__date">
 										<svg class="news__icon icon" aria-hidden="true">
 											<use xlink:href="#icon-time"></use>
 										</svg>05 декабря 2018, 12:45</div>
-									<h2 class="title_2">У мережі показали нерухомість сім’ї прокурора САП, куплену на невідомі кошти</h2>
+									<h2 class="news2__title title_2">Как Ложкин на ПриватБанке заработал</h2>
 								</div>
 							</a>
 						</div>
 					</div>
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img4.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
+						<div class="tipe__desc">
 							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
 								пиар-месседжи»
 								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
-								собственную безопасность ...;</div>
+								собственную безопасностьИнформация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
+								собственную безопасность ...</div>
 						</div>
 					</a>
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img5.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
-							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически</h2>
+						<div class="tipe__desc">
+							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
+								пиар-месседжи»
+								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
 								собственную безопасность ...</div>
 						</div>
 					</a>
 
-					<a class="news_1" href="#!">
-						<div class="news1__col_img">
-							<div class="news1__wrap_img ">
+					<a class="tipe" href="#!">
+						<div class="tipe__col_img">
+							<div class="wrap_img ">
 								<img class="img_cover" src="img/img6.jpg" alt="">
 							</div>
 						</div>
-						<div class="news1__desc">
-							<div class="news__date">
+						<div class="tipe__date">
 								<svg class="news__icon icon" aria-hidden="true">
 									<use xlink:href="#icon-time"></use>
 								</svg>05 декабря 2018, 12:45</div>
+						<div class="tipe__desc">
 							<h2 class="title_2">«Порошенко тотально проигрывает выборы и истерически генерирует все новые
-								пиар-месседжи» — экс-нардеп</h2>
+								пиар-месседжи»
+								— экс-нардеп</h2>
 							<div class="text">Информация о том, что Арсен Аваков пытается обеспечить сохранность своих активов и
 								собственную безопасность ...</div>
 						</div>
 					</a>
+
+
 
 					<nav class="pagin__col" aria-label="Последние новости">
 						<ul class="pagin">
@@ -487,171 +529,174 @@
 
 
 
-				<div class="right__col col-md-4">
+				<div class="right__col col-lg-4">
 
-					<div class=" mb_60">
 						
-						<h2 class=" title_blue">новые ДОСЬЕ</h2>
-
-						<a class="commit" href="#!">
-							<div class="commit1__col_img">
-								<div class="commit__wrap_img ">
-									<img class="img_cover" src="img/avatar1.jpg" alt="">
+					<h2 class=" title_blue">новые ДОСЬЕ</h2>
+					<div class="row mb_60">
+						<div class="col-md-6 col-lg-12">
+							<a class="dossier" href="#!">
+								<div class="dossier__col_img">
+									<img src="img/avatar1.jpg" alt="">
 								</div>
-							</div>
-							<div class="commit__desc">
-								<h2 class="title_2">Роман Симкив</h2>
-								<div class="text">Прокурор специализированной антикоррупционной прокуратуры;</div>
-							</div>
-						</a>
-						<a class="commit" href="#!">
-							<div class="commit1__col_img">
-								<div class="commit__wrap_img ">
-									<img class="img_cover" src="img/avatar3.jpg" alt="">
+								<div class="dossier__desc">
+									<h2 class="title_2">Роман Симкив</h2>
+									<div class="dossier__text">Народный депутат Украины
+										VII и VIII созывов</div>
 								</div>
-							</div>
-							<div class="commit__desc">
-								<h2 class="title_2">Виктория Джарты</h2>
-								<div class="text">Судья Хозяйственного суда г. Киева</div>
-							</div>
-						</a>
-						<a class="commit" href="#!">
-							<div class="commit1__col_img">
-								<div class="commit__wrap_img ">
-									<img class="img_cover" src="img/avatar2.jpg" alt="">
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-12">
+							<a class="dossier" href="#!">
+								<div class="dossier__col_img">
+										<img src="img/avatar3.jpg" alt="">
 								</div>
-							</div>
-							<div class="commit__desc">
-								<h2 class="title_2">Станислав Березкин</h2>
-								<div class="text">Экс-глава Администрации Президента Украины (2014- 2016)</div>
-							</div>
-						</a>
-						<a class="commit" href="#!">
-							<div class="commit1__col_img">
-								<div class="commit__wrap_img ">
-									<img class="img_cover" src="img/avatar4.jpg" alt="">
+								<div class="dossier__desc">
+									<h2 class="title_2">Виктория Джарты</h2>
+									<div class="dossier__text">Судья Хозяйственного суда г. Киева</div>
 								</div>
-							</div>
-							<div class="commit__desc">
-								<h2 class="title_2">Андрей Денисенко</h2>
-								<div class="text">Народный депутат Украины VIII созыва</div>
-							</div>
-						</a>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-12">
+							<a class="dossier" href="#!">
+								<div class="dossier__col_img">
+										<img src="img/avatar2.jpg" alt="">
+								</div>
+								<div class="dossier__desc">
+									<h2 class="title_2">Станислав Березкин</h2>
+									<div class="dossier__text">Экс-глава Администрации Президента Украины (2014- 2016)</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-12">
+							<a class="dossier" href="#!">
+								<div class="dossier__col_img">
+										<img src="img/avatar4.jpg" alt="">
+								</div>
+								<div class="dossier__desc">
+									<h2 class="title_2">Андрей Денисенко</h2>
+									<div class="dossier__text">Народный депутат Украины VIII созыва</div>
+								</div>
+							</a>
+						</div>
 					</div>
 
-
-					<!-- Последнее видео -->
-
-					<div class="mb_60">
-						
-						<h2 class=" title_blue">Последнее видео</h2>
-
-						<a class="video" href="#!">
-							<div class="news1__wrap_img mb_15">
-								<img class="img_cover" src="img/img9.jpg" alt="">
-								<div class="news__namber">
-									<svg class="eye__icon icon" aria-hidden="true">
-										<use xlink:href="#icon-eye"></use>
-									</svg>2 579</div>
-								<svg class="play__icon icon" aria-hidden="true">
-									<use xlink:href="#icon-play"></use>
-								</svg>
-							</div>
-							<div class="news1__desc">
-
-								<h2 class="title_2">Ликарчук возле ГФСУ организовал митинг люмпенов в свою поддержку;</h2>
-							</div>
-						</a>
-					</div>
+					
 
 
-					<!-- НОВЫЕ КОММЕНТАРИИ -->
+				<!-- Последнее видео -->
 
-					<div class="mb_60">
-						
-						<h2 class=" title_blue">НОВЫЕ КОММЕНТАРИИ</h2>
+				<div class="mb_60">
+					
+					<h2 class=" title_blue">Последнее видео</h2>
 
-						<a class="commit" href="#!">
-							<div class="commit2__col_img">
-								<div class="commit__wrap_img ">
-									<img class="img_cover" src="img/avatar5.jpg" alt="">
-								</div>
-							</div>
-							<div class="commit2__desc">
-								<div class="commit__text">Не был он никогда советником Луценко, все время служил в Ялтинском управлении
-									сбу, сначала прапорщиком...;</div>
-								<div class="commit__date">Сергей, 07 декабря, 21:57</div>
-							</div>
-						</a>
-						<a class="commit" href="#!">
-							<div class="commit2__col_img">
-								<div class="commit__wrap_img ">
-									<img class="img_cover" src="img/avatar5.jpg" alt="">
-								</div>
-							</div>
-							<div class="commit2__desc">
-								<div class="commit__text">Не был он никогда советником Луценко, все время служил в Ялтинском управлении
-									сбу, сначала прапорщиком...;</div>
-								<div class="commit__date">Сергей, 07 декабря, 21:57</div>
-							</div>
-						</a>
-						<a class="commit" href="#!">
-							<div class="commit2__col_img">
-								<div class="commit__wrap_img ">
-									<img class="img_cover" src="img/avatar5.jpg" alt="">
-								</div>
-							</div>
-							<div class="commit2__desc">
-								<div class="commit__text">Не был он никогда советником Луценко, все время служил в Ялтинском управлении
-									сбу, сначала прапорщиком...;</div>
-								<div class="commit__date">Сергей, 07 декабря, 21:57</div>
-							</div>
-						</a>
-						<a class="commit" href="#!">
-							<div class="commit2__col_img">
-								<div class="commit__wrap_img ">
-									<img class="img_cover" src="img/avatar5.jpg" alt="">
-								</div>
-							</div>
-							<div class="commit2__desc">
-								<div class="commit__text">Не был он никогда советником Луценко, все время служил в Ялтинском управлении
-									сбу, сначала прапорщиком...;</div>
-								<div class="commit__date">Сергей, 07 декабря, 21:57</div>
-							</div>
-						</a>
-					</div>
+					<a class="video" href="#!">
+						<div class="wrap_img mb_15">
+							<img class="img_cover" src="img/img9.jpg" alt="">
+							<div class="news__namber">
+								<svg class="eye__icon icon" aria-hidden="true">
+									<use xlink:href="#icon-eye"></use>
+								</svg>2 579</div>
+							<svg class="play__icon icon" aria-hidden="true">
+								<use xlink:href="#icon-play"></use>
+							</svg>
+						</div>
+						<div class="news1__desc">
 
-
-
-
-
-					<div class="mb_60">
-						
-						<h2 class=" title_blue">Art</h2>
-
-						<a class="art" href="#!">
-							<div class="news1__wrap_img mb_15">
-								<img class="img_cover" src="img/img10.jpg" alt="">
-								<div class="news__namber">
-									<svg class="eye__icon icon" aria-hidden="true">
-										<use xlink:href="#icon-eye"></use>
-									</svg>2 579</div>
-							</div>
-							<div class="news1__desc">
-								<div class="news__date">
-									<svg class="news__icon icon" aria-hidden="true">
-										<use xlink:href="#icon-time"></use>
-									</svg>05 декабря 2018, 12:45</div>
-								<h2 class="title_2">Легитимный</h2>
-							</div>
-						</a>
-					</div>
-
-
-					<img class="link" src="img/pic1.jpg" alt="">
-
-
+							<h2 class="title_2">Ликарчук возле ГФСУ организовал митинг люмпенов в свою поддержку;</h2>
+						</div>
+					</a>
 				</div>
+
+
+				<!-- НОВЫЕ КОММЕНТАРИИ -->
+
+				
+				<h2 class=" title_blue">НОВЫЕ КОММЕНТАРИИ</h2>
+					<div class="row mb_30">
+					
+					<div class="col-md-6 col-lg-12">
+						<a class="comment" href="#!">
+							<div class="comment__col_img">
+								<img src="img/avatar5.jpg" alt="">
+							</div>
+							<div class="comment__desc">
+								<div class="comment__text">Не был он никогда советником Луценко, все время служил в Ялтинском управлении
+									сбу, сначала прапорщиком...;</div>
+								<div class="comment__date">Сергей, 07 декабря, 21:57</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-6 col-lg-12">
+						<a class="comment" href="#!">
+							<div class="comment__col_img">
+								<img src="img/avatar5.jpg" alt="">
+							</div>
+							<div class="comment__desc">
+								<div class="comment__text">Не был он никогда советником Луценко, все время служил в Ялтинском управлении
+									сбу, сначала прапорщиком...;</div>
+								<div class="comment__date">Сергей, 07 декабря, 21:57</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-6 col-lg-12">
+						<a class="comment" href="#!">
+							<div class="comment__col_img">
+								<img src="img/avatar5.jpg" alt="">
+							</div>
+							<div class="comment__desc">
+								<div class="comment__text">Не был он никогда советником Луценко, все время служил в Ялтинском управлении
+									сбу, сначала прапорщиком...;</div>
+								<div class="comment__date">Сергей, 07 декабря, 21:57</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-6 col-lg-12">
+						<a class="comment" href="#!">
+							<div class="comment__col_img">
+								<img src="img/avatar5.jpg" alt="">
+							</div>
+							<div class="comment__desc">
+								<div class="comment__text">Не был он никогда советником Луценко, все время служил в Ялтинском управлении
+									сбу, сначала прапорщиком...;</div>
+								<div class="comment__date">Сергей, 07 декабря, 21:57</div>
+							</div>
+						</a>
+					</div>
+					
+				</div>
+
+
+
+
+
+				<div class="mb_60">
+					
+					<h2 class=" title_blue">Art</h2>
+
+					<a class="art" href="#!">
+						<div class="wrap_img mb_15">
+							<img class="img_cover" src="img/img10.jpg" alt="">
+							<div class="news__namber">
+								<svg class="eye__icon icon" aria-hidden="true">
+									<use xlink:href="#icon-eye"></use>
+								</svg>2 579</div>
+						</div>
+						<div class="news1__desc">
+							<div class="news__date">
+								<svg class="news__icon icon" aria-hidden="true">
+									<use xlink:href="#icon-time"></use>
+								</svg>05 декабря 2018, 12:45</div>
+							<h2 class="title_2">Легитимный</h2>
+						</div>
+					</a>
+				</div>
+
+
+				<img class="link" src="img/pic1.jpg" alt="">
+
+
+			</div>
 			</div>
 		</div>
 

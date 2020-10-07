@@ -1,87 +1,105 @@
-
 objectFitImages(); //IE polyfill
 
 
-//сбрасываем :focus при клике для a и button, но оставляем с клавиатуры
+//сбрасываем :focus при клике, но оставляем с клавиатуры
 
 (function () {
-  var isMouseDown = false;
-  var button = document.querySelectorAll('a, button');
-  var isDialog = document.querySelector('[role="dialog"]');
+	var button = document.querySelectorAll('a, button, label, input');
 
-  function func() {
-    if (isMouseDown) {
-      this.blur();
-    }
-  }
+	var isMouseDown = false;
+	var isLabel = false;
 
-  for (var i = 0; i < button.length; i++) {
-    var el = button[i];
-    el.addEventListener('mousedown', function () {
-      isMouseDown = true;
-      if (isDialog) {
-        isKeyClick = false;
-      }
-    });
-    el.addEventListener('mouseup', function () {
-      isMouseDown = false;
-    });
-    if (isDialog) {
-      el.addEventListener('keydown', function () {
-        isKeyClick = true;
-      });
-    }
-    el.addEventListener('focus', func.bind(el));
-  }
+	for (var i = 0; i < button.length; i++) {
+		var el = button[i];
+		el.classList.add('focus');
+
+		el.addEventListener('mousedown', function () {
+			this.classList.remove('focus'); //при клике по а в фокусе
+			isMouseDown = true;
+			if (this.tagName == 'LABEL') {
+				isLabel = true;
+			}
+		});
+		el.addEventListener('mouseup', function () {
+			if (this.tagName == 'LABEL') {
+				isLabel = false;
+			}
+		});
+		el.addEventListener('keydown', function (e) {
+			if (e.key === "Tab") {
+				isMouseDown = false;
+			}
+		});
+		el.addEventListener('focus', function () {
+			if (isMouseDown) {
+				this.classList.remove('focus');
+			}
+		});
+		el.addEventListener('blur', function () {
+			if (this.type === 'checkbox') {
+				if (!isLabel) {
+					var check = document.querySelector('[for="' + this.id + '"]');
+					check.classList.add('focus');
+				}
+			} else {
+				this.classList.add('focus');
+			}
+		});
+	}
 }());
+
+
+
 
 /* кнопка плавной прокрутки вверх */
 
 (function () {
-  var btn_up = document.querySelector('[data-up]');
+	var btn_up = document.querySelector('[data-up]');
 
-  function scrollUp() {
-    window.scrollBy(0, -80);
+	function scrollUp() {
+		window.scrollBy(0, -80);
 
-    if (window.pageYOffset > 0) {
-      requestAnimationFrame(scrollUp);
-    }
-  }
+		if (window.pageYOffset > 0) {
+			requestAnimationFrame(scrollUp);
+		}
+	}
 
-  var lastScrollPos = 0;
-  var start = true;
+	var lastScrollPos = 0;
+	var start = true;
 
-  function showBtnUp() {
-    if (start) {
-      start = false;
+	function showBtnUp() {
+		if (start) {
+			start = false;
 
-      setTimeout(function () {
-        var scrollPos = window.pageYOffset;
+			setTimeout(function () {
+				var scrollPos = window.pageYOffset;
 
-        if (scrollPos > 600 && scrollPos < lastScrollPos) {
-          btn_up.classList.add('show');
-        } else {
-          btn_up.classList.remove('show');
-        }
-        lastScrollPos = scrollPos;
-        start = true;
-      }, 200);
-    }
-  }
+				if (scrollPos > 600 && scrollPos < lastScrollPos) {
+					btn_up.classList.add('show');
+				} else {
+					btn_up.classList.remove('show');
+				}
+				lastScrollPos = scrollPos;
+				start = true;
+			}, 200);
+		}
+	}
 
-  if (btn_up) {
-    btn_up.addEventListener('click', scrollUp);
-    document.addEventListener('scroll', showBtnUp);
-  }
+	if (btn_up) {
+		btn_up.addEventListener('click', scrollUp);
+		document.addEventListener('scroll', showBtnUp);
+	}
 }());
 
 
 
-{/* <button class="btn_up" data-up aria-label="наверх">
-  <svg class="icon icon_arrow_up">
-    <use xlink:href="#icon-arrow"></use>
-  </svg>
-</button> */}
+{
+	/* <button class="btn_up" data-up aria-label="наверх">
+	  <svg class="icon icon_arrow_up">
+	    <use xlink:href="#icon-arrow"></use>
+	  </svg>
+	</button> */
+}
 
 // .btn_up {
 //   position: fixed;
@@ -119,23 +137,31 @@ objectFitImages(); //IE polyfill
 
 
 
+(function () {
 
-document.querySelector('.nav__burger').onclick = function () {
-	this.classList.toggle('active');
-	document.querySelector('.head__nav_bottom').classList.toggle('active');
-	document.querySelector('.head__row_top').classList.toggle('active');
-	document.querySelector('body').classList.toggle('lock');
-}
+	document.querySelector('.nav__burger').onclick = function () {
+		this.classList.toggle('active');
+		document.querySelector('.head__nav_top').classList.toggle('active');
+		document.querySelector('.overlay').classList.toggle('active');
+		document.querySelector('body').classList.toggle('lock');
+	}
+
+	document.querySelector('.btn_search').onclick = function () {
+		this.classList.toggle('active');
+		document.querySelector('#form_2').classList.toggle('active');
+	}
+}());
+
 
 
 function scrollMenu(nav, offset, speed, easing) {
 
 	var menu = document.querySelector(nav);
 	var menuHeight;
-	if (offset) { 
+	if (offset) {
 		var head = document.querySelector(offset);
 
-		if (head) { 
+		if (head) {
 			menuHeight = head.clientHeight;
 		} else {
 			menuHeight = 0;
@@ -244,7 +270,7 @@ function scrollMenu(nav, offset, speed, easing) {
 	});
 };
 
-scrollMenu('.site__nav'); 
+// scrollMenu('.site__nav');
 // scrollMenu('.site__nav', '.fix_menu'); 
 // scrollMenu('.site__nav', '.fix_menu', 2000);
 // scrollMenu('.site__nav', 0, 3000); // без фиксменю и со скоростью
@@ -276,4 +302,45 @@ var mySwiper = new Swiper('.__swiper', {
 		}
 	}
 });
-	
+
+
+// ====== validate ========
+
+(function () {
+
+	var names = document.forms['form_3']['name'];
+	var password = document.forms['form_3']['password'];
+
+	var check_input = [names, password];
+
+	for (var i = 0; i < check_input.length; i++) {
+		check_input[i].addEventListener('blur', check);
+		check_input[i].addEventListener('focus', rezet);
+	}
+
+	function rezet(event) {
+		this.classList.remove('invalid');
+	}
+
+	function check(event) {
+		if (!this.validity.valid) {
+			this.classList.add('invalid');
+		}
+	}
+
+	form_3.addEventListener('submit', function (event) {
+
+		for (var i = 0; i < check_input.length; i++) {
+			var input = check_input[i];
+
+			if (!input.validity.valid) {
+				input.classList.add('invalid');
+				event.preventDefault();
+			}
+		}
+	});
+}());
+
+
+
+

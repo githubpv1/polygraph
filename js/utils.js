@@ -1,13 +1,6 @@
-/**
- * @namespace aria
- */
 
 var aria = aria || {};
 
-/**
- * @desc
- *  Key code constants
- */
 aria.KeyCode = {
   BACKSPACE: 8,
   TAB: 9,

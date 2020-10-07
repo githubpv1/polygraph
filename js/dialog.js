@@ -7,8 +7,6 @@ var aria = aria || {};
 
 aria.Utils = aria.Utils || {};
 
-var isKeyClick = true ;
-
 (function () {
   /*
    * 
@@ -73,9 +71,7 @@ var isKeyClick = true ;
 
     aria.Utils.IgnoreUtilFocusChanges = true;
     try {
-      if (isKeyClick) {
-        element.focus();
-      }
+      element.focus();
     }
     catch (e) {
     }
@@ -115,6 +111,7 @@ var isKeyClick = true ;
 
   document.addEventListener('keyup', aria.handleEscape);
 
+  
   /**
    * @constructor
    * @desc Объект диалога, обеспечивающий модальное управление фокусом.
@@ -209,7 +206,7 @@ var isKeyClick = true ;
     this.clearDialog();
     this.dialogNode.className = 'default_dialog'; // make visible
 
-    if (isKeyClick && this.focusFirst) {
+    if (this.focusFirst) {
       this.focusFirst.focus();
     }
     else {
@@ -217,7 +214,10 @@ var isKeyClick = true ;
     }
 
     this.lastFocus = document.activeElement;
-  }; // end Dialog constructor
+  }; 
+
+  // end Dialog constructor
+
 
   aria.Dialog.prototype.clearDialog = function () {
     Array.prototype.map.call(
@@ -240,9 +240,7 @@ var isKeyClick = true ;
     aria.Utils.remove(this.postNode);
     this.dialogNode.className = 'hidden';
     this.backdropNode.classList.remove('active');
-    if (isKeyClick) {
-      this.focusAfterClosed.focus();
-		}
+    this.focusAfterClosed.focus();
 
     // If a dialog was open underneath this one, restore its listeners.
     if (aria.OpenDialogList.length > 0) {
@@ -251,7 +249,9 @@ var isKeyClick = true ;
     else {
       document.body.classList.remove(aria.Utils.dialogOpenClass);
     }
-  }; // end close
+  }; 
+  
+  // end close
 
   /**
    * @desc
@@ -275,7 +275,9 @@ var isKeyClick = true ;
 
     var focusAfterClosed = newFocusAfterClosed || this.focusAfterClosed;
     var dialog = new aria.Dialog(newDialogId, focusAfterClosed, newFocusFirst);
-  }; // end replace
+  }; 
+  
+  // end replace
 
   aria.Dialog.prototype.addListeners = function () {
     document.addEventListener('focus', this.trapFocus, true);
@@ -316,9 +318,7 @@ var isKeyClick = true ;
   window.replaceDialog = function (newDialogId, newFocusAfterClosed,
     newFocusFirst) {
     var topDialog = aria.getCurrentDialog();
-    if (topDialog.dialogNode.contains(document.activeElement)) {
-      topDialog.replace(newDialogId, newFocusAfterClosed, newFocusFirst);
-    }
+    topDialog.replace(newDialogId, newFocusAfterClosed, newFocusFirst);
   }; // end replaceDialog  replace - заменить
 
 }());
